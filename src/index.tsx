@@ -1,11 +1,15 @@
 import { render } from 'react-dom';
+import { Provider } from 'react-redux';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
 import AppRoutes from './routers';
+import { store } from './states/store';
 
 
 render(
-  <AppRoutes />,
+  <Provider store={store}>
+    <AppRoutes />
+  </Provider>,
   document.getElementById('root')
 );
 
