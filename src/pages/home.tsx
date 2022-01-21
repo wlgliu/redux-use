@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom"
-import { decremented, incremented } from "../states/counter";
+import { decremented, incremented } from "../states/reducer/counter";
 import { useAppDispatch, useAppSelector } from "../states/hooks";
 
 export default function Home() {
@@ -9,8 +9,8 @@ export default function Home() {
   const dispatch = useAppDispatch();
 
   useEffect(() => {
-    console.log('state');
-  }, []);
+    console.log('state', count);
+  }, [count]);
 
   return <>
     <h1>首页</h1>
